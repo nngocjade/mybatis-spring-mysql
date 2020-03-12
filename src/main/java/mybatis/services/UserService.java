@@ -17,4 +17,12 @@ public class UserService {
     public ArrayList<User> getAllUsers(){
         return userMapper.getAllUsers();
     }
+
+    public User insertUser(User user){
+        int i = userMapper.insertUser(user);
+
+        if(i == 1){
+            return userMapper.findUserByFirstNameLastName(user.getFirst_name(), user.getLast_name());
+        }
+    }
 }
