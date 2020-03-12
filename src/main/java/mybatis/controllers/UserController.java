@@ -25,7 +25,7 @@ public class UserController {
         return userService.insertUser(user);
     }
     @DeleteMapping
-    public User deleteUser(@RequestParam(value="id")int id) throws NewUserException {
+    public int deleteUser(@RequestParam(value="id")int id) throws NewUserException {
         return userService.makeUserInactive(id);
     }
 

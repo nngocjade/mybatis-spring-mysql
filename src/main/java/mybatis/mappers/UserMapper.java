@@ -31,7 +31,6 @@ public interface UserMapper {
     @Select(SELECT_BY_ID)
     int findUserById(int id);
 
-
     @Insert(INSERT_USER)
     public int insertUser(User user);
 

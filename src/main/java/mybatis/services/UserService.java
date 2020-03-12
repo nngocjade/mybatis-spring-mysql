@@ -31,7 +31,7 @@ public class UserService {
     }
 
 
-    public User makeUserInactive(int id) throws NewUserException {
+    public int makeUserInactive(int id) throws NewUserException {
 
         makeUserInactive(id).setActive(false);
 
@@ -39,7 +39,7 @@ public class UserService {
 
         //1 is referring to 1 row
         if(i == 1){
-            return userMapper.findUserById(user.getFirst_name(), user.getLast_name());
+            return userMapper.findUserById(id);
         }else {
             NewUserException ne = new NewUserException("error creating new user");
             throw ne;
