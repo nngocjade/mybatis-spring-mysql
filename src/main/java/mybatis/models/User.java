@@ -38,4 +38,5 @@ public class User {
     public void setActive(boolean active) {
         isActive = active;
     }
+
 }
