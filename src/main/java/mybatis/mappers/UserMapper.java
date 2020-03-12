@@ -18,7 +18,7 @@ public interface UserMapper {
     String INSERT_USER = "INSERT INTO `mybatis-test`.users (first_name, last_name) " +
             "VALUES (#{first_name}, #{last_name})";
 
-    String DELETE_USER = "update * from `mybatis.test`.users SET `isActive` = `0` where id = #{id}";
+    String DELETE_USER = "update `mybatis-test`.users SET isActive = 0 where id = #{id}";
 
     String UPDATE_USER = " ";
 
@@ -29,7 +29,7 @@ public interface UserMapper {
     User findUserByFirstNameLastName(String first_name, String last_name);
 
     @Select(SELECT_BY_ID)
-    int findUserById(int id);
+    User findUserById(int id);
 
     @Insert(INSERT_USER)
     public int insertUser(User user);

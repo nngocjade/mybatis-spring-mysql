@@ -31,11 +31,9 @@ public class UserService {
     }
 
 
-    public int makeUserInactive(int id) throws NewUserException {
+    public User deleteUser(int id) throws NewUserException {//this method is used in the controller class
 
-        makeUserInactive(id).setActive(false);
-
-        int i = userMapper.makeUserInactive(id);
+        int i = userMapper.makeUserInactive(id); //this is the method from the mapper class
 
         //1 is referring to 1 row
         if(i == 1){
