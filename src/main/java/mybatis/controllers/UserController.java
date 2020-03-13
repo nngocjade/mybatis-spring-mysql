@@ -29,10 +29,10 @@ public class UserController {
         return userService.deleteUser(id);
     }
 
-//    @UpdateMapping("/{id}")
-//    public User updateUser(@PathVariable(value="id")int id) {
-//        return userService.deleteUser(id);
-//    }
+    @PatchMapping
+    public User updateUser(@RequestBody User user) throws NewUserException {
+        return userService.updateUser(user);
+    }
 
 
 

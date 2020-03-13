@@ -20,7 +20,7 @@ public interface UserMapper {
 
     String DELETE_USER = "update `mybatis-test`.users SET isActive = 0 where id = #{id}";
 
-    String UPDATE_USER = " ";
+    String UPDATE_USER = "update `mybatis-test`.users SET  where id = #{id}";
 
     @Select(SELECT_ALL_USERS)
     public ArrayList<User> getAllUsers();

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @Service //a bean Spring manages
 public class UserService {
 
-    @Autowired //apart of dependency mapper
+    @Autowired //a part of dependency mapper
     UserMapper userMapper;
 
     public ArrayList<User> getAllUsers(){
@@ -43,6 +43,18 @@ public class UserService {
             throw ne;
         }
 
+    }
+
+    public User updateUser(User user) throws NewUserException{
+
+        int i = userMapper.insertUser(user);
+
+        if(i == 1){
+            return userMapper.findUserByFirstNameLastName(user.getFirst_name(), user.getLast_name());
+        }else {
+            NewUserException ne = new NewUserException("error creating new user");
+            throw ne;
+        }
     }
 
 
