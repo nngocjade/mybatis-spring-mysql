@@ -20,7 +20,7 @@ public interface UserMapper {
 
     String DELETE_USER = "update `mybatis-test`.users SET isActive = 0 where id = #{id}";
 
-    String UPDATE_USER = "update `mybatis-test`.users SET  where id = #{id}";
+    String UPDATE_USER = "update `mybatis-test`.users SET first_name = #{first_name}, last_name = #{last_name}, isActive = #{isActive} where id = #{id}";
 
     @Select(SELECT_ALL_USERS)
     public ArrayList<User> getAllUsers();
@@ -38,8 +38,6 @@ public interface UserMapper {
     public int makeUserInactive(int id);
 
     @Update(UPDATE_USER)
-    public int updateUser(User user);
-
-
+    public int updateUser(User user); //the int returned is a row
 
 }

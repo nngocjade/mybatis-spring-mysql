@@ -20,9 +20,8 @@ public class UserService {
     }
 
     public User insertUser(User user) throws NewUserException {
-        int i = userMapper.insertUser(user);
-
-        if(i == 1){
+        int numOfRows = userMapper.insertUser(user);
+        if(numOfRows == 1){
             return userMapper.findUserByFirstNameLastName(user.getFirst_name(), user.getLast_name());
         }else {
             NewUserException ne = new NewUserException("error creating new user");
@@ -30,34 +29,24 @@ public class UserService {
         }
     }
 
-
     public User deleteUser(int id) throws NewUserException {//this method is used in the controller class
-
-        int i = userMapper.makeUserInactive(id); //this is the method from the mapper class
-
+        int numOfRows = userMapper.makeUserInactive(id); //this is the method from the mapper class
         //1 is referring to 1 row
-        if(i == 1){
+        if(numOfRows == 1){
             return userMapper.findUserById(id);
         }else {
-            NewUserException ne = new NewUserException("error creating new user");
+            NewUserException ne = new NewUserException("error deleting the user");
             throw ne;
         }
-
     }
 
     public User updateUser(User user) throws NewUserException{
-
-        int i = userMapper.insertUser(user);
-
-        if(i == 1){
-            return userMapper.findUserByFirstNameLastName(user.getFirst_name(), user.getLast_name());
+        int numOfRows = userMapper.updateUser(user);
+        if(numOfRows == 1){
+            return userMapper.findUserById(user.getId());
         }else {
-            NewUserException ne = new NewUserException("error creating new user");
+            NewUserException ne = new NewUserException("error updating the user");
             throw ne;
         }
     }
-
-
-
-
 }
