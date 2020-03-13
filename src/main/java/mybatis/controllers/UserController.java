@@ -28,10 +28,12 @@ public class UserController {
     public User deleteUser(@RequestParam(value="id")int id) throws NewUserException {
         return userService.deleteUser(id);
     }
-
     @PatchMapping
     public User updateUser(@RequestBody User user) throws NewUserException {
         return userService.updateUser(user);
     }
-
+    @GetMapping("/{id}")
+    public User getById(@PathVariable(value="id")int id) {
+        return userService.getById(id);
+    }
 }

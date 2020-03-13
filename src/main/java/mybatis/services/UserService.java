@@ -49,4 +49,8 @@ public class UserService {
             throw ne;
         }
     }
+
+    public User getById(int id) {
+        return userMapper.findUserById(id);
+    }
 }
