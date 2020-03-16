@@ -25,8 +25,38 @@ public class TaskController {
         returnVal.setMessage("Here are the tasks");
         return returnVal;
     }
+    //Get
+    //localhost:8080/tasks/5
+    //body-empty
+    //response
+        //{
+    //    "data": {
+    //        "id": 5,
+    //        "task_name": "clean",
+    //        "is_complete": true,
+    //        "user_id": 5
+    //    },
+    //    "message": "Here are the tasks",
+    //    "response_code": 200
+    //}
+    @GetMapping("/{id}")
+    public ResponseObject getTaskById(
+            @PathVariable("id") int id){
+        ResponseObject<Task> returnVal = new ResponseObject<>();
+        returnVal.setData(taskService.getTaskById(id));
+        returnVal.setResponse_code(200);
+        returnVal.setMessage("Here are the tasks");
+        return returnVal;
+    }
     //Delete
-    //localhost:8080/tasks/2?id=2
+    //localhost:8080/tasks/2
+    //body-empty
+    //response
+         //{
+        //    "data": null,
+        //    "message": "Task successfully deleted",
+        //    "response_code": 200
+        //}
     @DeleteMapping("/{id}")
     public ResponseObject deleteTask(@PathVariable("id") int id){
         int status = taskService.deleteById(id);
@@ -44,10 +74,8 @@ public class TaskController {
         }
         return returnVal;
     }
-    @GetMapping("/{id}")
-    public Task getById(@PathVariable(value="id")int id) {
-        return taskService.getById(id);
-    }
+    //Post (Create)
+    //
     @PostMapping
     public Task insertTask(@RequestBody Task task){
         return taskService.insertTask(task);

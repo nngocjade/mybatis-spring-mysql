@@ -27,7 +27,7 @@ public class TaskService {
         return taskMapper.deleteById(id);
     }
 
-    public Task getById(int id){
+    public Task getTaskById(int id){
         return taskMapper.getById(id);
     }
 
