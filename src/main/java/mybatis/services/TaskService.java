@@ -26,8 +26,23 @@ public class TaskService {
         return taskMapper.getById(id);
     }
 
-    public int insertTask(Task task){
-        return taskMapper.insertTask(task);
+    public Task insertTask(Task task){
+        int i = taskMapper.insertTask(task);//return a task
+        return task;
+    }
+
+    public int updateTask(Task task){
+        return taskMapper.updateTask(task);
+    }
+
+    public ArrayList<Task> getTasksByUserId(int user_id, String complete){
+
+        if(complete.equalsIgnoreCase("true")){
+            return taskMapper.getTasksByUserIdBoolean(user_id, true);
+        }else if (complete.equalsIgnoreCase("false")){
+            return taskMapper.getTasksByUserIdBoolean(user_id, false);
+        }
+        return taskMapper.getTasksByUserId(user_id);
     }
 
 

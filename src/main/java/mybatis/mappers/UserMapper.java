@@ -40,4 +40,5 @@ public interface UserMapper {
     @Update(UPDATE_USER)
     public int updateUser(User user); //the int returned is a row
 
+
 }
