@@ -75,7 +75,20 @@ public class TaskController {
         return returnVal;
     }
     //Post (Create)
-    //
+    //localhost:8080/tasks
+    //body-empty
+    //{
+    //	"task_name": "more cleaning",
+    //	"is_complete": true,
+    //	"user_id":3
+    //}
+    //response
+    //{
+    //    "id": 11,
+    //    "task_name": "more cleaning",
+    //    "is_complete": true,
+    //    "user_id": 3
+    //}
     @PostMapping
     public Task insertTask(@RequestBody Task task){
         return taskService.insertTask(task);
