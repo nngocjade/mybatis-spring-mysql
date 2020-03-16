@@ -15,8 +15,8 @@ public interface TaskMapper {
     String DELETE_TASK_BY_ID = "DELETE FROM `mybatis-test`.`tasks` WHERE id = #{id}";
     String SELECT_BY_ID = "SELECT * FROM `mybatis-test`.tasks WHERE id = #{id}";
     //create - post a task
-    String INSERT_TASK = "INSERT INTO `mybatis-test`.`tasks` (task_name, is_complete, user_id)" +
-             "VALUES (#{task_name}, #{is_complete}, #{user_id})";
+    String INSERT_TASK = "INSERT INTO `mybatis-test`.`tasks` (id, task_name, is_complete, user_id)" +
+             "VALUES (#{id}, #{task_name}, #{is_complete}, #{user_id})";
 
     String UPDATE_TASK = "UPDATE `mybatis-test`.`tasks` SET task_name = #{task_name}, is_complete = #{is_complete}, user_id = #{user_id} WHERE id = #{id}";
 

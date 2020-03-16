@@ -12,7 +12,7 @@ public interface UserMapper {
 
     String SELECT_BY_FIRST_LAST_NAME = "select * from `mybatis-test`.users " +
             " where first_name = #{param1} and last_name = #{param2}";
-
+    //findUserById
     String SELECT_BY_ID = "select * from `mybatis-test`.users where id = #{id}";
 
     String INSERT_USER = "INSERT INTO `mybatis-test`.users (first_name, last_name) " +
@@ -28,7 +28,7 @@ public interface UserMapper {
     @Select(SELECT_BY_FIRST_LAST_NAME)
     User findUserByFirstNameLastName(String first_name, String last_name);
 
-    @Select(SELECT_BY_ID)
+    @Select(SELECT_BY_ID)//
     User findUserById(int id);
 
     @Insert(INSERT_USER)

@@ -31,10 +31,11 @@ public class UserService {
 
     public User deleteUser(int id) throws NewUserException {//this method is used in the controller class
         int numOfRows = userMapper.makeUserInactive(id); //this is the method from the mapper class
+
         //1 is referring to 1 row
         if(numOfRows == 1){
             return userMapper.findUserById(id);
-        }else {
+        } else {
             NewUserException ne = new NewUserException("error deleting the user");
             throw ne;
         }

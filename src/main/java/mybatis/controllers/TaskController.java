@@ -14,6 +14,7 @@ public class TaskController {
     @Autowired
     TaskService taskService;
 
+    //http://localhost:8080/tasks
     @GetMapping
     public ArrayList<Task> getAllTasks(){
         return taskService.getAllTasks();
@@ -24,7 +25,6 @@ public class TaskController {
     }
     @GetMapping("/{id}")
     public Task getById(@PathVariable(value="id")int id) {
-
         return taskService.getById(id);
     }
     @PostMapping
