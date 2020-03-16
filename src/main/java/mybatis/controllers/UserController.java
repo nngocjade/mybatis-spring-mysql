@@ -64,7 +64,6 @@ public class UserController {
     public User getById(@PathVariable(value="id")int id) {
         return userService.getById(id);
     }
-
     //Get
     //localhost:8080/users/4/tasks
     //Get
@@ -75,11 +74,5 @@ public class UserController {
             @RequestParam (value = "complete", defaultValue = "-1") String complete){
         return taskService.getTasksByUserId(user_id, complete);
     }
-
-
-
-
-
-
 
 }
