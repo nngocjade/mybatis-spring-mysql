@@ -24,9 +24,6 @@ public interface TaskMapper {
 
     String SELECT_TASK_BY_USER_ID_BOOLEAN = "SELECT * FROM `mybatis-test`.tasks WHERE user_id = #{param1} and is_complete = #{param2}";
 
-//
-//    String SELECT_COMPLETED_TASK_BY_USER_ID
-
     @Select(SELECT_ALL_TASKS) //this select annotation requires a query to run
     public ArrayList<Task> getAllTasks();//this method returns a collection of tasks, the body of this method will be created by mybatist-test
 
@@ -48,12 +45,4 @@ public interface TaskMapper {
 
     @Select(SELECT_TASK_BY_USER_ID_BOOLEAN)
     public ArrayList<Task> getTasksByUserIdBoolean(int user_id, boolean complete);
-
-
-
-//    @Select()
-//    Task getCompletedTaskByUserId()
-
-
-
 }
