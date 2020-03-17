@@ -1,4 +1,4 @@
-package mybatis.models;
+package mybatis.models.taskapp;
 
 public class Task {
     int id;

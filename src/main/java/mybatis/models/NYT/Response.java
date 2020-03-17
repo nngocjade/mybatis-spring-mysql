@@ -1,41 +1,26 @@
 package mybatis.models.NYT;
 
 
-public class Response<T> {
-    T data;
-    String message;
-    int response_code;
 
-    public Response(){
+
+public class Response {
+
+    private Doc[] docs;
+    private Meta meta;
+
+    public Doc[] getDocs() {
+        return docs;
     }
 
-    public Response(T data, String message, int response_code) {
-        this.data = data;
-        this.message = message;
-        this.response_code = response_code;
+    public void setDocs(Doc[] docs) {
+        this.docs = docs;
     }
 
-    public T getData() {
-        return data;
+    public Meta getMeta() {
+        return meta;
     }
 
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public int getResponse_code() {
-        return response_code;
-    }
-
-    public void setResponse_code(int response_code) {
-        this.response_code = response_code;
+    public void setMeta(Meta meta) {
+        this.meta = meta;
     }
 }

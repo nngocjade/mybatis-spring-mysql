@@ -3,7 +3,7 @@ package mybatis.services;
 
 import mybatis.exceptions.NewUserException;
 import mybatis.mappers.UserMapper;
-import mybatis.models.User;
+import mybatis.models.taskapp.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

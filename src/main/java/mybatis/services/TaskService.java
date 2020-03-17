@@ -3,8 +3,7 @@ package mybatis.services;
 
 import mybatis.mappers.TaskMapper;
 import mybatis.mappers.UserMapper;
-import mybatis.models.Task;
-import mybatis.models.User;
+import mybatis.models.taskapp.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

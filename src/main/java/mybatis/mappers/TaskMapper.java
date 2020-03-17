@@ -1,8 +1,7 @@
 package mybatis.mappers;
 
 
-import mybatis.models.Task;
-import mybatis.models.User;
+import mybatis.models.taskapp.Task;
 import org.apache.ibatis.annotations.*;
 
 import java.util.ArrayList;

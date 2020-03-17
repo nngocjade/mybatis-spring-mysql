@@ -1,8 +1,8 @@
 package mybatis.controllers;
 
 import mybatis.exceptions.NewUserException;
-import mybatis.models.Task;
-import mybatis.models.User;
+import mybatis.models.taskapp.Task;
+import mybatis.models.taskapp.User;
 import mybatis.services.TaskService;
 import mybatis.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

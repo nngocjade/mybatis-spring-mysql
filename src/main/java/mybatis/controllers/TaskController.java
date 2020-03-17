@@ -1,7 +1,7 @@
 package mybatis.controllers;
 
 import mybatis.models.ResponseObject;
-import mybatis.models.Task;
+import mybatis.models.taskapp.Task;
 import mybatis.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
